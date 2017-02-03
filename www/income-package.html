@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prozper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,600" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+      $( document ).ready(function() {
+        console.log( "document loaded" );
+
+
+        $("li[name='angs-li-side']").hover(function(){
+          $(this).css("background-color", "rgb(105,240,174)");
+
+        }, function(){
+          $(this).css("background-color", "rgba(255, 255, 255, 0.7)");
+        });
+
+
+      });
+    </script>
+
+    <style>
+      body{
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background: url("img/money.jpg");
+        background-size: cover;
+        font-family: 'Prompt' !important;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      h1, h2, h3, h4, h5, h6, .prompt-font{
+        font-family: 'Prompt' !important;
+      }
+
+      .nunito-font{
+        font-family: 'Nunito' !important;
+      }
+
+      .angs-navbar{
+        background-color: rgba(103, 58, 183, 0.8);
+      }
+
+      .angs-title-bar{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .angs-title{
+        font-size: 32px;
+        vertical-align: middle;
+      }
+      .angs-subtitle{
+        font-size: 20px;
+      }
+
+      .angs-nav{
+        top: 76px;
+        width: 30%;
+        background: linear-gradient(45deg, #CA90F4, #53AEF9);
+      }
+
+      .angs-nav-menu{
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+        vertical-align: super;
+
+      }
+
+      .angs-nav-divider{
+        height: 1px;
+        background-color: #9C27B0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      .angs-full-content{
+        background-color: rgba(103, 58, 183, 0.2);
+      }
+
+      .angs-select{
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .angs-bg-input{
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .ang-nav-toolbar{
+        background-color: rgba(103, 58, 183, 0.5);
+      }
+
+      .angs-icon{
+        vertical-align: middle;
+      }
+
+      .angs-list-selected{
+        color: #673ab7;
+      }
+
+      .angs-list-unselected{
+        color: rgba(255, 255, 255, 0);
+      }
+
+      .angs-card-scrollable{
+        height: 300px;
+        overflow-y: auto;
+      }
+
+      .angs-chooselist-scrollable{
+        height: 180px;
+        overflow-y: auto;
+      }
+
+      .angs-title-choose{
+        vertical-align: super;
+        font-size: 18px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+      <div id="title-bar" class="w3-container angs-navbar">
+        <p class="nunito-font angs-title-bar angs-title-bar">
+          <button class="mdl-button mdl-js-button mdl-button--fab w3-pink" onclick="w3_open()"><i class="material-icons">menu</i></button>
+          <span class="angs-title">&nbsp;proZper<span class="angs-subtitle"> - Payroll</span></span>
+        </p>
+      </div>
+
+      <script>
+        function w3_open() {
+          document.getElementById("mySidenav").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+          document.getElementById("mySidenav").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+        }
+      </script>
+
+      <nav class="w3-sidenav w3-animate-left angs-nav" style="z-index: 5; display: none;" id="mySidenav">
+        <a href="dashboard.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">dashboard</i><span class="angs-nav-menu">หน้าหลัก</span></a>
+        <a href="organization.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">account_balance</i><span class="angs-nav-menu">ข้อมูลองค์กร</span></a>
+        <a href="employee.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">person</i><span class="angs-nav-menu">ข้อมูลพนักงาน</span></a>
+        <a href="income-item.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">องค์ประกอบเงินเดือน</span></a>
+        <a href="income-package.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">โครงสร้างเงินเดือน</span></a>
+        <a href="payment.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">schedule</i><span class="angs-nav-menu">รอบการจ่ายเงิน</span></a>
+        <a href="payroll.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">monetization_on</i><span class="angs-nav-menu">จัดทำเงินเดือน</span></a>
+        <a href="approve.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">assignment_turned_in</i><span class="angs-nav-menu">อนุมัติเงินเดือน</span></a>
+        <div class="angs-nav-divider"></div>
+        <a href="configuration.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">settings</i><span class="angs-nav-menu">ตั้งค่าการทำงาน</span></a>
+        <a href="!#" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">vpn_key</i><span class="angs-nav-menu">เปลี่ยนรหัสผ่าน</span></a>
+        <a href="index.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">lock</i><span class="angs-nav-menu">ออกจากระบบ</span></a>
+      </nav>
+
+      <div class="w3-overlay w3-animate-opacity" style="display: none;" onclick="w3_close()" id="myOverlay"></div>
+
+      <main>
+        <div class="w3-row">
+            <div class="w3-col w3-container ang-nav-toolbar" style="width:33%">
+              <div class="w3-rest"></div>
+              <div class="w3-col w3-right w3-padding-8" style="width:10%">
+                <button id="add" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                  <i class="material-icons">add</i>
+                </button>
+                <div class="mdl-tooltip" data-mdl-for="add">
+                  เพิ่มโครงสร้างเงินเดือน
+                </div>
+              </div>
+            </div>
+            <div class="w3-col w3-container angs-full-content" style="width:67%">
+              <div class="w3-col w3-padding-8" style="width:90%">
+                <p class="w3-xlarge w3-text-white w3-padding-4">โครงสร้างเงินเดือน</p>
+              </div>
+              <div class="w3-col w3-padding-8" style="width:10%">
+                <button id="save"class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                  <i class="material-icons">done</i>
+                </button>
+                <div class="mdl-tooltip" data-mdl-for="save">
+                  บันทึกโครงสร้างเงินเดือน
+                </div>
+                <button id="cancel"class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                  <i class="material-icons">close</i>
+                </button>
+                <div class="mdl-tooltip" data-mdl-for="cancel">
+                  ยกเลิกการเพิ่มหรือแก้ไข
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-col" style="width:33%">
+              <ul class="w3-ul w3-border">
+                <li class="angs-bg-input " name="angs-li-side">
+                  <div class="w3-row">
+                    <a href="#" class="w3-text-black">
+                      <div class="w3-col" style="width:10%"><i class="material-icons angs-icon angs-list-selected">play_arrow</i></div>
+                      <div class="w3-col" style="width:80%">พนักงานประจำ</div>
+                      <div class="w3-col" style="width:10%"><i class="material-icons w3-text-red angs-icon" id="delete-1">delete</i></div>
+                      <div class="mdl-tooltip" for="delete-1">ลบโครงสร้างเงินเดือน</div>
+                    </a>
+                  </div>
+                </li>
+
+                <li class="angs-bg-input" name="angs-li-side">
+                  <div class="w3-row">
+                    <a href="#" class="w3-text-black">
+                      <div class="w3-col" style="width:10%"><i class="material-icons angs-icon angs-list-unselected">play_arrow</i></div>
+                      <div class="w3-col" style="width:80%">ผู้บริหาร</div>
+                      <div class="w3-col" style="width:10%"><i class="material-icons w3-text-red angs-icon" id="delete-2">delete</i></div>
+                      <div class="mdl-tooltip" for="delete-2">ลบโครงสร้างเงินเดือน</div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+            <div class="w3-col w3-container angs-full-content" style="width:67%">
+              <div class="w3-row w3-padding-4">
+                <div class="w3-half">
+                  <span id="tt1">ชื่อโครงสร้างเงินเดือน (ไทย)</span>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="tt1">
+                    ชื่อโครงสร้างเงินเดือนภาษาไทย
+                  </div>
+                  <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                </div>
+
+                <div class="w3-half">
+                  <span id="tt2">ชื่อโครงสร้างเงินเดือน (อังกฤษ)</span>
+                  <div class="mdl-tooltip mdl-tooltip--large" for="tt2">
+                    ชื่อโครงสร้างเงินเดือนภาษาอังกฤษ
+                  </div>
+                  <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                </div>
+              </div>
+
+              <div class="w3-row w3-padding-4">
+                องค์ประกอบของโครงสร้างเงินเดือน
+                <div class="w3-card-8 ">
+                  <div class="w3-container w3-padding-8">
+                    <div class="w3-row">
+                      <div class="w3-rest"></div>
+                      <div class="w3-col w3-right w3-padding-8 " style="width:6%">
+                        <button id="choose" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink" onclick="document.getElementById('income-package-modal').style.display='block'">
+                          <i class="material-icons">playlist_add_check</i>
+                        </button>
+                        <div class="mdl-tooltip" data-mdl-for="choose">
+                          เลือกองค์ประกอบเงินเดือน
+                        </div>
+
+                        <div id="income-package-modal" class="w3-modal">
+                          <div class="w3-modal-content w3-card-8 w3-animate-top angs-bg-input" style="width: 40%;">
+                            <header class="w3-container" style="background: linear-gradient(45deg, #CA90F4, #53AEF9);">
+                              <h5 class="w3-text-white">เลือกองค์ประกอบเงินเดือน</h5>
+                            </header>
+                            <div class="w3-container">
+                              <div class="w3-row w3-padding-16">
+                                <ul class="w3-ul w3-white angs-chooselist-scrollable">
+                                  <li>
+                                    <input class="w3-check" type="checkbox" />
+                                    <label class="">เงินเดือน</label>
+                                  </li>
+                                  <li>
+                                    <input class="w3-check" type="checkbox" />
+                                    <label class="">ค่าวิชาชีพ</label>
+                                  </li>
+                                  <li>
+                                    <input class="w3-check" type="checkbox" />
+                                    <label class="">ค่าน้ำมันรถตามระยะทาง</label>
+                                  </li>
+                                  <li>
+                                    <input class="w3-check" type="checkbox" />
+                                    <label class="">ค่านายหน้า</label>
+                                  </li>
+                                  <li>
+                                    <input class="w3-check" type="checkbox" />
+                                    <label class="">ค่าจ้าง</label>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <div class="w3-row w3-right w3-padding-12">
+                                <button class="w3-btn w3-round w3-red" onclick="document.getElementById('income-package-modal').style.display='none'" style="box-shadow: none;">ยกเลิก</button>
+                                <button class="w3-btn w3-round w3-red" style="box-shadow: none;">ยืนยัน</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+
+                    <div class="w3-row angs-card-scrollable w3-margin-bottom">
+                      <div class="w3-row"></div>
+                      <div class="w3-card-2 angs-bg-input w3-margin-right w3-margin-bottom">
+                        <div class="w3-row">
+                          <div class="w3-col" style="width:20%">
+                            <div class="w3-margin">
+                              <span class="angs-title-choose">เงินเดือน</span>
+                            </div>
+                          </div>
+                          <div class="w3-col" style="width:80%">
+                            <div class="w3-margin">
+                              <ul>
+                                <li>เป็นรายได้ประจำแบบคงที่</li>
+                                <li>จ่ายเป็นรายเดือน</li>
+                                <li>รวมเป็นฐานรายได้</li>
+                                <li>ใช้ในการคำนวณภาษีเงินได้</li>
+                                <li>ใช้ในการคำนวณเงินสมทบกองทุนประกันสังคม</li>
+                                <li>จัดอยู่ในรายได้ประเภท 40(1)</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="w3-card-2 angs-bg-input w3-margin-right w3-margin-bottom">
+                        <div class="w3-row">
+                          <div class="w3-col" style="width:20%">
+                            <div class="w3-margin">
+                              <span class="angs-title-choose">ค่าวิชาชีพ</span>
+                            </div>
+                          </div>
+                          <div class="w3-col" style="width:80%">
+                            <div class="w3-margin">
+                              <ul>
+                                <li>เป็นรายได้ประจำแบบคงที่</li>
+                                <li>จ่ายเป็นรายเดือน</li>
+                                <li>ไม่รวมเป็นฐานรายได้</li>
+                                <li>ใช้ในการคำนวณภาษีเงินได้</li>
+                                <li>ใช้ในการคำนวณเงินสมทบกองทุนประกันสังคม</li>
+                                <li>จัดอยู่ในรายได้ประเภท 40(1)</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="w3-card-2 angs-bg-input w3-margin-right w3-margin-bottom">
+                        <div class="w3-row">
+                          <div class="w3-col" style="width:20%">
+                            <div class="w3-margin">
+                              <span class="angs-title-choose">ค่านายหน้า</span>
+                            </div>
+                          </div>
+                          <div class="w3-col" style="width:80%">
+                            <div class="w3-margin">
+                              <ul>
+                                <li>เป็นรายได้ครั้งคราวที่กำหนดค่าตามจริง</li>
+                                <li>จ่ายตามแต่กำหนด</li>
+                                <li>ไม่รวมในฐานรายได้</li>
+                                <li>ใช้ในการคำนวณภาษีเงินได้</li>
+                                <li>ไม่ใช้ในการคำนวณเงินสมทบกองทุนประกันสังคม</li>
+                                <li>จัดอยู่ในรายได้ประเภท 40(1)</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div class="w3-row w3-padding-8"></div>
+
+
+
+            </div>
+        </div>
+      </main>
+
+
+  </body>
+</html>

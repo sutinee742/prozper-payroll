@@ -152,12 +152,18 @@
                 <div class="w3-row w3-padding-8">
                   <div class="w3-col" style="width:88%"><p class="w3-xlarge w3-text-white">ตั้งค่าระบบ</p></div>
                   <div class="w3-col" style="width:12%">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                    <button id="save" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
                       <i class="material-icons">done</i>
                     </button>
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                    <div class="mdl-tooltip" data-mdl-for="save">
+                      บันทึกการตั้งค่า
+                    </div>
+                    <button id="cancel" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
                       <i class="material-icons">close</i>
                     </button>
+                    <div class="mdl-tooltip" data-mdl-for="cancel">
+                      ยกเลิกการแก้ไข
+                    </div>
                   </div>
                 </div>
 
