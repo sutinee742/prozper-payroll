@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prozper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,600" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+      $( document ).ready(function() {
+        console.log( "document loaded" );
+        // $(".btn-menu").sideNav();
+
+        $('#yearFormat').click(function(){
+          if($("#yearFormat").is(":checked")){
+            $("#year").text("พุทธศักราช");
+          }else{
+            $("#year").text("คริสต์ศักราช");
+          }
+        });
+      });
+
+    </script>
+
+    <style>
+      body{
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background: url("img/signin.jpg");
+        background-size: cover;
+        font-family: 'Prompt' !important;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      h1, h2, h3, h4, h5, h6, .prompt-font{
+        font-family: 'Prompt' !important;
+      }
+
+      .nunito-font{
+        font-family: 'Nunito' !important;
+      }
+
+      .angs-navbar{
+        background-color: rgba(103, 58, 183, 0.8);
+      }
+
+      .angs-title-bar{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .angs-title{
+        font-size: 32px;
+        vertical-align: middle;
+      }
+      .angs-subtitle{
+        font-size: 20px;
+      }
+
+      .angs-nav{
+        top: 76px;
+        width: 30%;
+        background: linear-gradient(45deg, #CA90F4, #53AEF9);
+      }
+
+      .angs-nav-menu{
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+        vertical-align: super;
+
+      }
+
+      .angs-nav-divider{
+        height: 1px;
+        background-color: #9C27B0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      .angs-full-content{
+        background-color: rgba(103, 58, 183, 0.2);
+      }
+
+      .angs-bg-input{
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+      <div class="w3-container angs-navbar">
+        <p class="nunito-font angs-title-bar angs-title-bar">
+          <button class="mdl-button mdl-js-button mdl-button--fab w3-pink" onclick="w3_open()"><i class="material-icons">menu</i></button>
+          <span class="angs-title">&nbsp;proZper<span class="angs-subtitle"> - Payroll</span></span>
+        </p>
+      </div>
+
+      <script>
+        function w3_open() {
+          document.getElementById("mySidenav").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+          document.getElementById("mySidenav").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+        }
+      </script>
+
+      <nav class="w3-sidenav w3-animate-left angs-nav" style="z-index: 5; display: none;" id="mySidenav">
+        <a href="dashboard.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">dashboard</i><span class="angs-nav-menu">หน้าหลัก</span></a>
+        <a href="organization.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">account_balance</i><span class="angs-nav-menu">ข้อมูลองค์กร</span></a>
+        <a href="employee.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">person</i><span class="angs-nav-menu">ข้อมูลพนักงาน</span></a>
+        <a href="income-item.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">องค์ประกอบเงินเดือน</span></a>
+        <a href="income-package.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">โครงสร้างเงินเดือน</span></a>
+        <a href="payment.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">schedule</i><span class="angs-nav-menu">รอบการจ่ายเงิน</span></a>
+        <a href="payroll.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">monetization_on</i><span class="angs-nav-menu">จัดทำเงินเดือน</span></a>
+        <a href="approve.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">assignment_turned_in</i><span class="angs-nav-menu">อนุมัติเงินเดือน</span></a>
+        <div class="angs-nav-divider"></div>
+        <a href="configuration.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">settings</i><span class="angs-nav-menu">ตั้งค่าการทำงาน</span></a>
+        <a href="!#" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">vpn_key</i><span class="angs-nav-menu">เปลี่ยนรหัสผ่าน</span></a>
+        <a href="index.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">lock</i><span class="angs-nav-menu">ออกจากระบบ</span></a>
+      </nav>
+
+      <div class="w3-overlay w3-animate-opacity" style="display: none;" onclick="w3_close()" id="myOverlay"></div>
+
+      <main>
+        <div class="w3-container">
+          <div class="w3-row">
+              <div class="w3-col w3-container" style="width:20%"></div>
+              <div class="w3-col w3-container angs-full-content" style="width:60%">
+                <p></p>
+                <div class="w3-row w3-padding-8">
+                  <div class="w3-col" style="width:88%"><p class="w3-xlarge w3-text-white">ตั้งค่าระบบ</p></div>
+                  <div class="w3-col" style="width:12%">
+                    <button id="save" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                      <i class="material-icons">done</i>
+                    </button>
+                    <div class="mdl-tooltip" data-mdl-for="save">
+                      บันทึกการตั้งค่า
+                    </div>
+                    <button id="cancel" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                      <i class="material-icons">close</i>
+                    </button>
+                    <div class="mdl-tooltip" data-mdl-for="cancel">
+                      ยกเลิกการแก้ไข
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w3-row w3-text-black">
+                  <p>
+                    เลือกปีศักราช
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="yearFormat">
+                      <input type="checkbox" id="yearFormat" class="mdl-switch__input">
+                      <span id="year" class="mdl-switch__label">คริสต์ศักราช</span>
+                    </label>
+                  </p>
+
+                  <p></p>
+                  <p>
+                    เลือกข้อมูลพนักงาน <br>
+                    <input class="w3-check angs-bg-input" type="checkbox" checked="checked">
+                    <label class="">ข้อมูลส่วนบุคคล</label><br>
+                    <input class="w3-check angs-bg-input" type="checkbox" checked="checked">
+                    <label class="">ข้อมูลการติดต่อ</label><br>
+                    <input class="w3-check angs-bg-input" type="checkbox" checked="checked">
+                    <label class="">ประวัติการทำงาน</label><br>
+                    <input class="w3-check angs-bg-input" type="checkbox" checked="checked">
+                    <label class="">ข้อมูลภาษี</label><br>
+                  </p>
+
+                  <p>
+                    วันที่เริ่มจัดทำเงินเดือน
+                    <input class="w3-input w3-border-0 angs-bg-input" style="width:50%" type="date">
+                  </p>
+
+                  <div class="w3-row">
+                    <div class="w3-third">
+                      จำนวนวันในหนึ่งเดือน
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:90%" type="number">
+                    </div>
+                    <div class="w3-third">
+                      จำนวนวันในหนึ่งสัปดาห์
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:90%"type="number">
+                    </div>
+                    <div class="w3-third">
+                      จำนวนชั่วโมงในหนึ่งวัน
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:90%" type="number">
+                    </div>
+                  </div>
+
+                  <p class="w3-padding-32"></p>
+                  <p class="w3-padding-8"></p>
+
+                </div>
+
+
+              </div>
+              <div class="w3-col w3-container" style="width:20%"></div>
+          </div>
+        </div>
+      </main>
+
+
+  </body>
+</html>

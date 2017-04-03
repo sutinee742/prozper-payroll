@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prozper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,600" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+      $( document ).ready(function() {
+        console.log( "document loaded" );
+        // $(".btn-menu").sideNav();
+
+        $('#yearFormat').click(function(){
+          if($("#yearFormat").is(":checked")){
+            $("#year").text("พุทธศักราช");
+          }else{
+            $("#year").text("คริสต์ศักราช");
+          }
+        });
+      });
+
+    </script>
+
+    <style>
+      body{
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background: url("img/buildings.jpg");
+        background-size: cover;
+        font-family: 'Prompt' !important;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      h1, h2, h3, h4, h5, h6, .prompt-font{
+        font-family: 'Prompt' !important;
+      }
+
+      .nunito-font{
+        font-family: 'Nunito' !important;
+      }
+
+      .angs-navbar{
+        background-color: rgba(103, 58, 183, 0.8);
+      }
+
+      .angs-title-bar{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .angs-title{
+        font-size: 32px;
+        vertical-align: middle;
+      }
+      .angs-subtitle{
+        font-size: 20px;
+      }
+
+      .angs-nav{
+        top: 76px;
+        width: 30%;
+        background: linear-gradient(45deg, #CA90F4, #53AEF9);
+      }
+
+      .angs-nav-menu{
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+        vertical-align: super;
+
+      }
+
+      .angs-nav-divider{
+        height: 1px;
+        background-color: #9C27B0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      .angs-full-content{
+        background-color: rgba(103, 58, 183, 0.2);
+      }
+
+      .angs-select{
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .angs-bg-input{
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+
+      <div class="w3-container angs-navbar">
+        <p class="nunito-font angs-title-bar angs-title-bar">
+          <button class="mdl-button mdl-js-button mdl-button--fab w3-pink" onclick="w3_open()"><i class="material-icons">menu</i></button>
+          <span class="angs-title">&nbsp;proZper<span class="angs-subtitle"> - Payroll</span></span>
+        </p>
+      </div>
+
+      <script>
+        function w3_open() {
+          document.getElementById("mySidenav").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+          document.getElementById("mySidenav").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+        }
+      </script>
+
+      <nav class="w3-sidenav w3-animate-left angs-nav" style="z-index: 5; display: none;" id="mySidenav">
+        <a href="dashboard.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">dashboard</i><span class="angs-nav-menu">หน้าหลัก</span></a>
+        <a href="organization.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">account_balance</i><span class="angs-nav-menu">ข้อมูลองค์กร</span></a>
+        <a href="employee.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">person</i><span class="angs-nav-menu">ข้อมูลพนักงาน</span></a>
+        <a href="income-item.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">องค์ประกอบเงินเดือน</span></a>
+        <a href="income-package.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">โครงสร้างเงินเดือน</span></a>
+        <a href="payment.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">schedule</i><span class="angs-nav-menu">รอบการจ่ายเงิน</span></a>
+        <a href="payroll.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">monetization_on</i><span class="angs-nav-menu">จัดทำเงินเดือน</span></a>
+        <a href="approve.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">assignment_turned_in</i><span class="angs-nav-menu">อนุมัติเงินเดือน</span></a>
+        <div class="angs-nav-divider"></div>
+        <a href="configuration.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">settings</i><span class="angs-nav-menu">ตั้งค่าการทำงาน</span></a>
+        <a href="!#" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">vpn_key</i><span class="angs-nav-menu">เปลี่ยนรหัสผ่าน</span></a>
+        <a href="index.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">lock</i><span class="angs-nav-menu">ออกจากระบบ</span></a>
+      </nav>
+
+      <div class="w3-overlay w3-animate-opacity" style="display: none;" onclick="w3_close()" id="myOverlay"></div>
+
+      <main>
+        <div class="w3-container angs-full-content">
+          <p></p>
+          <div class="w3-row w3-padding-8">
+            <div class="w3-col" style="width:93%"><p class="w3-xlarge w3-text-white">ข้อมูลองค์กร</p></div>
+            <div class="w3-col" style="width:7%">
+              <button id="save" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                <i class="material-icons">done</i>
+              </button>
+              <div class="mdl-tooltip" data-mdl-for="save">
+                บันทึกข้อมูลองค์กร
+              </div>
+              <button id="cancel" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                <i class="material-icons">close</i>
+              </button>
+              <div class="mdl-tooltip" data-mdl-for="cancel">
+                ยกเลิกการแก้ไข
+              </div>
+            </div>
+          </div>
+          <div class="w3-row w3-padding-4">
+            <div class="w3-half">
+              <span id="tt1">เลขทะเบียนนิติบุคคล&nbsp;<i class="icon material-icons w3-large w3-text-white">info_outline</i></span>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt1">
+                เลขทะเบียนนิติบุคคล 13 หลักที่ออกโดยกระทรวงพาณิชย์ หลังจากบันทึกข้อมูลแล้วจะไม่สามารถแก้ไขได้
+              </div>
+              <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+            </div>
+            <div class="w3-half">
+              <span id="tt2">ประเภทขององค์กร&nbsp;<i class="icon material-icons w3-large w3-text-white">info_outline</i></span>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt2">
+                เลือกประเภทขององค์กรตามลักษณะของการจัดตั้ง
+              </div>
+              <select class="w3-select w3-border angs-select angs-bg-input" name="option">
+                <option value="1" checked>ห้างหุ้นส่วนสามัญ</option>
+                <option value="2">ห้างหุ้นส่วนจำกัด</option>
+                <option value="3">บริษัทจำกัด</option>
+                <option value="4">สมาคม</option>
+                <option value="5">มูลนิธิ</option>
+                <option value="6">สหกรณ์</option>
+              </select>
+            </div>
+          </div>
+          <div class="w3-row w3-padding-4">
+            <div class="w3-half">
+              <span id="tt3">ชื่อบริษัท (ไทย)&nbsp;<i class="icon material-icons w3-large w3-text-white">info_outline</i></span>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt3">
+                ชื่อบริษัทภาษาไทย (ไม่ต้องมีคำว่า บริษัท ... จำกัด)
+              </div>
+              <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+            </div>
+            <div class="w3-half">
+              <span id="tt4">ชื่อบริษัท (อังกฤษ)&nbsp;<i class="icon material-icons w3-large w3-text-white">info_outline</i></span>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt4">
+                ชื่อบริษัทภาษาอังกฤษ (ไม่ต้องลงท้ายด้วย Co., Ltd.)
+              </div>
+              <input class="w3-input w3-border-0 angs-bg-input" style="width:100%" type="text">
+            </div>
+          </div>
+          <div class="w3-row w3-padding-4">
+            <div class="w3-third">
+              โทรศัพท์
+              <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+            </div>
+            <div class="w3-third">
+              โทรสาร
+              <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+            </div>
+            <div class="w3-third">
+              เว็บไซต์
+              <input class="w3-input w3-border-0 angs-bg-input" style="width:100%" type="text">
+            </div>
+          </div>
+          <div class="w3-row w3-padding-8">
+            <div class="w3-half">
+              <span id="tt5">ที่อยู่ (ไทย)&nbsp;<i class="icon material-icons w3-large w3-text-white">info_outline</i></span>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt5">
+                ที่อยู่ภาษาไทยตามเอกสารการจดทะเบียน
+              </div>
+              <div class="w3-card-8" style="width:98%">
+                <div class="w3-container">
+                  <div class="w3-row w3-padding-4">
+                    เลขที่/อาคาร/ตรอก/ซอย/ถนน
+                    <textarea class="w3-input w3-border-0 angs-bg-input" style="width:100%"></textarea>
+                  </div>
+                  <div class="w3-row w3-padding-4">
+                    <div class="w3-half">
+                      แขวง
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      เขต
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:100%" type="text">
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-4">
+                    <div class="w3-half">
+                      จังหวัด
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      รหัสไปรษณีย์
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:100%" type="text">
+                    </div>
+                  </div>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="w3-half">
+              <span id="tt6">ที่อยู่ (อังกฤษ)&nbsp;<i class="icon material-icons w3-large w3-text-white">info_outline</i></span>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt6">
+                ที่อยู่ภาษาอังกฤษตามเอกสารการจดทะเบียน
+              </div>
+              <div class="w3-card-8" style="width:98%">
+                <div class="w3-container">
+                  <div class="w3-row w3-padding-4">
+                    เลขที่/อาคาร/ตรอก/ซอย/ถนน
+                    <textarea class="w3-input w3-border-0 angs-bg-input" style="width:100%"></textarea>
+                  </div>
+                  <div class="w3-row w3-padding-4">
+                    <div class="w3-half">
+                      แขวง
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      เขต
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:100%" type="text">
+                    </div>
+                  </div>
+                  <div class="w3-row w3-padding-4">
+                    <div class="w3-half">
+                      จังหวัด
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      รหัสไปรษณีย์
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:100%" type="text">
+                    </div>
+                  </div>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p></p>
+        </div>
+      </main>
+
+
+  </body>
+</html>

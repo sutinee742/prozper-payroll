@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prozper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,600" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+      $( document ).ready(function() {
+        console.log( "document loaded" );
+
+        $("div[name='work-history-hover']").hover(function(){
+          $(this).css("background-color", "rgba(105,240,174,0.7)");
+
+        }, function(){
+          $(this).css("background-color", "rgba(255, 255, 255, 0.5)");
+        });
+
+
+      });
+    </script>
+
+    <style>
+      body{
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background: url("img/office.jpg");
+        background-size: cover;
+        font-family: 'Prompt' !important;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      h1, h2, h3, h4, h5, h6, .prompt-font{
+        font-family: 'Prompt' !important;
+      }
+
+      .nunito-font{
+        font-family: 'Nunito' !important;
+      }
+
+      .angs-navbar{
+        background-color: rgba(103, 58, 183, 0.8);
+      }
+
+      .angs-title-bar{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .angs-title{
+        font-size: 32px;
+        vertical-align: middle;
+      }
+      .angs-subtitle{
+        font-size: 20px;
+      }
+
+      .angs-nav{
+        top: 76px;
+        width: 30%;
+        background: linear-gradient(45deg, #CA90F4, #53AEF9);
+      }
+
+      .angs-nav-menu{
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+        vertical-align: super;
+
+      }
+
+      .angs-nav-divider{
+        height: 1px;
+        background-color: #9C27B0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      .angs-full-content{
+        background-color: rgba(103, 58, 183, 0.2);
+      }
+
+      .angs-select{
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .angs-bg-input{
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .angs-bg-nav{
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .ang-nav-toolbar{
+        background-color: rgba(103, 58, 183, 0.5);
+      }
+
+      .angs-icon{
+        vertical-align: middle;
+      }
+
+      .angs-list-selected{
+        color: #673ab7;
+      }
+
+      .angs-list-unselected{
+        color: rgba(255, 255, 255, 0);
+      }
+
+      .angs-card-scrollable{
+        height: 230px;
+        overflow-y: auto;
+      }
+
+      .angs-chooselist-scrollable{
+        height: 180px;
+        overflow-y: auto;
+      }
+
+      .angs-title-choose{
+        vertical-align: super;
+        font-size: 18px;
+      }
+
+      .angs-tab{
+        border-radius: 15px 15px 0px 0px;
+      }
+
+      .ang-table-tr-even{
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .ang-table-tr-odd{
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .angs-scrollable-panel{
+        overflow-y:auto;
+        height:455px;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+
+      <div id="title-bar" class="w3-container angs-navbar">
+        <p class="nunito-font angs-title-bar angs-title-bar">
+          <button class="mdl-button mdl-js-button mdl-button--fab w3-pink" onclick="w3_open()"><i class="material-icons">menu</i></button>
+          <span class="angs-title">&nbsp;proZper<span class="angs-subtitle"> - Payroll</span></span>
+        </p>
+      </div>
+
+      <script>
+        function w3_open() {
+          document.getElementById("mySidenav").style.display = "block";
+          document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+          document.getElementById("mySidenav").style.display = "none";
+          document.getElementById("myOverlay").style.display = "none";
+        }
+      </script>
+
+      <nav class="w3-sidenav w3-animate-left angs-nav" style="z-index: 5; display: none;" id="mySidenav">
+        <a href="dashboard.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">dashboard</i><span class="angs-nav-menu">หน้าหลัก</span></a>
+        <a href="organization.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">account_balance</i><span class="angs-nav-menu">ข้อมูลองค์กร</span></a>
+        <a href="employee.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">person</i><span class="angs-nav-menu">ข้อมูลพนักงาน</span></a>
+        <a href="income-item.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">องค์ประกอบเงินเดือน</span></a>
+        <a href="income-package.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">view_list</i><span class="angs-nav-menu">โครงสร้างเงินเดือน</span></a>
+        <a href="payment.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">schedule</i><span class="angs-nav-menu">รอบการจ่ายเงิน</span></a>
+        <a href="payroll.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">monetization_on</i><span class="angs-nav-menu">จัดทำเงินเดือน</span></a>
+        <a href="approve.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">assignment_turned_in</i><span class="angs-nav-menu">อนุมัติเงินเดือน</span></a>
+        <div class="angs-nav-divider"></div>
+        <a href="configuration.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">settings</i><span class="angs-nav-menu">ตั้งค่าการทำงาน</span></a>
+        <a href="!#" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">vpn_key</i><span class="angs-nav-menu">เปลี่ยนรหัสผ่าน</span></a>
+        <a href="index.html" class="w3-text-black w3-padding-4"><i class="material-icons w3-text-indigo">lock</i><span class="angs-nav-menu">ออกจากระบบ</span></a>
+      </nav>
+
+      <div class="w3-overlay w3-animate-opacity" style="display: none;" onclick="w3_close()" id="myOverlay"></div>
+
+      <main>
+        <div class="w3-row">
+            <div class="w3-col w3-container ang-nav-toolbar" style="width:33%">
+              <div class="w3-row ">
+                <div class="w3-row w3-round-jumbo angs-bg-input w3-margin-top">
+                  <div class="w3-col" style="width:84%">
+                    <input class="w3-input w3-border-0 w3-margin-left w3-margin-right w3-padding-4" style="background-color:transparent;" type="text" />
+                  </div>
+                  <div class="w3-col" style="width:8%">
+                    <a href="#" >
+                      <i class="material-icons w3-text-black angs-icon" style="padding-top: 2px;" id="cancel-1">close</i>
+                      <div class="mdl-tooltip" for="cancel-1">ยกเลิกการค้นหา</div>
+                    </a>
+                  </div>
+                  <div class="w3-col" style="width:8%">
+                    <a href="#">
+                      <i class="material-icons w3-text-black angs-icon" style="padding-top: 2px;" id="search-1">search</i>
+                      <div class="mdl-tooltip" for="search-1">ค้นหา</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w3-row">
+                <div class="w3-rest"></div>
+                <div class="w3-col w3-right w3-padding-8" style="width:10%">
+                  <button id="add" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                    <i class="material-icons">add</i>
+                  </button>
+                  <div class="mdl-tooltip" data-mdl-for="add">
+                    เพิ่มพนักงาน
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w3-col w3-container angs-full-content " style="width:67%">
+              <div class="w3-row">
+                <div class="w3-col w3-padding-8" style="width:90%">
+                  <p class="w3-xlarge w3-text-white w3-padding-4">ข้อมูลพนักงาน</p>
+                </div>
+                <div class="w3-col w3-padding-8" style="width:10%">
+                  <button id="save"class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                    <i class="material-icons">done</i>
+                  </button>
+                  <div class="mdl-tooltip" data-mdl-for="save">
+                    บันทึกข้อมูลพนักงาน
+                  </div>
+                  <button id="cancel"class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink">
+                    <i class="material-icons">close</i>
+                  </button>
+                  <div class="mdl-tooltip" data-mdl-for="cancel">
+                    ยกเลิกการเพิ่มหรือแก้ไข
+                  </div>
+                </div>
+              </div>
+              <div class="w3-row">
+                <ul class="w3-navbar w3-border-bottom w3-border-grey w3-center">
+                  <li style="width:20%;"><a href="javascript:void(0)" class="tablink w3-khaki w3-text-black angs-tab" onclick="openTab(event, 'tab-1');">ข้อมูลส่วนบุคคล</a></li>
+                  <li style="width:20%;"><a href="javascript:void(0)" class="tablink angs-bg-input w3-text-black angs-tab" onclick="openTab(event, 'tab-2');">การติดต่อ</a></li>
+                  <li style="width:20%;"><a href="javascript:void(0)" class="tablink angs-bg-input w3-text-black angs-tab" onclick="openTab(event, 'tab-3');">ประวัติการทำงาน</a></li>
+                  <li style="width:20%;"><a href="javascript:void(0)" class="tablink angs-bg-input w3-text-black angs-tab" onclick="openTab(event, 'tab-4');">ภาษี</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-col" style="width:33%">
+              <div class="w3-container">
+                <div class="w3-row w3-padding-8">
+                  <div class="w3-card-4 angs-bg-nav" name="work-history-hover">
+                    <a href="#" class="w3-text-black">
+                      <div class="w3-row" style="padding: 4px;">
+                        <div class="w3-col" style="width:5%"><i class="material-icons angs-icon angs-list-selected w3-padding-24">play_arrow</i></div>
+                        <div class="w3-col" style="width:20%"><i class="material-icons angs-icon w3-jumbo w3-padding-4">account_circle</i></div>
+                        <div class="w3-col" style="width:69%">
+                          <div style="font-size:20px; font-weight: initial;">ประชา</div>
+                          <div class="w3-padding-4" style="font-size:20px; font-weight: initial;">บดี</div>
+                          <div class="w3-padding-4" style="font-size:15px; font-weight: initial;">รหัสพนักงาน: 001</div>
+                        </div>
+                        <div class="w3-col" style="width:6%"><i class="material-icons w3-text-red angs-icon w3-padding-24" id="delete-1">delete</i></div>
+                        <div class="mdl-tooltip" for="delete-1">ลบข้อมูลพนักงาน</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="w3-row ">
+                  <div class="w3-card-4 angs-bg-nav" name="work-history-hover">
+                    <a href="#" class="w3-text-black">
+                      <div class="w3-row" style="padding: 4px;">
+                        <div class="w3-col" style="width:5%"><i class="material-icons angs-icon angs-list-selected w3-padding-24">play_arrow</i></div>
+                        <div class="w3-col" style="width:20%"><i class="material-icons angs-icon w3-jumbo w3-padding-4">account_circle</i></div>
+                        <div class="w3-col" style="width:69%">
+                          <div style="font-size:20px; font-weight: initial;">สุธินี</div>
+                          <div class="w3-padding-4" style="font-size:20px; font-weight: initial;">ทรงกล้า</div>
+                          <div class="w3-padding-4" style="font-size:15px; font-weight: initial;">รหัสพนักงาน: 002</div>
+                        </div>
+                        <div class="w3-col" style="width:6%"><i class="material-icons w3-text-red angs-icon w3-padding-24" id="delete-2">delete</i></div>
+                        <div class="mdl-tooltip" for="delete-2">ลบข้อมูลพนักงาน</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="w3-col angs-full-content angs-scrollable-panel" style="width:67%">
+              <div class="w3-row">
+
+                <div id="tab-1" class="w3-container tab-panel">
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      รหัสพนักงาน
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      คำนำหน้าชื่อ
+                      <select class="w3-select w3-border angs-select angs-bg-input" name="option">
+                        <option value="1" checked>นาย</option>
+                        <option value="2">นาง</option>
+                        <option value="3">นางสาว</option>
+                        <option value="4">หม่อมหลวง</option>
+                        <option value="5">หม่อมราชวงศ์</option>
+                        <option value="6">หม่อมเจ้า</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      ชื่อ (ไทย)
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      นามสกุล (ไทย)
+                      <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      ชื่อ (อังกฤษ)
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      นามสกุล (อังกฤษ)
+                      <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-third">
+                      วันเกิด
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="date">
+                    </div>
+                    <div class="w3-third">
+                      เลขประจำตัวประชาชน
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-third">
+                      วันหมดอายุ
+                      <input class="w3-input w3-border-0 angs-bg-input" type="date">
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-third">
+                      สัญชาติ
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-third">
+                      ศาสนา
+                      <select class="w3-select w3-border angs-select angs-bg-input" style="width:98%" name="option">
+                        <option value="1" checked>พุทธ</option>
+                        <option value="2">คริสต์</option>
+                        <option value="3">อิสลาม</option>
+                        <option value="4">ฮินดู</option>
+                        <option value="5">ซิกข์</option>
+                        <option value="6">อื่นๆ</option>
+                      </select>
+                    </div>
+                    <div class="w3-third">
+                      สถานะภาพ
+                      <select class="w3-select w3-border angs-select angs-bg-input" name="option">
+                        <option value="1" checked>โสด</option>
+                        <option value="2">สมรม</option>
+                        <option value="3">หย่า</option>
+                        <option value="4">หม้าย</option>
+                        <option value="5">แยกกันอยู่</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      วันที่เริ่มงาน
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="date">
+                    </div>
+                    <div class="w3-half">
+                      วันที่สิ้นสุดการทำงาน
+                      <input class="w3-input w3-border-0 angs-bg-input" type="date">
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    ประกันสังคม
+                    <div class="w3-card-8">
+                      <div class="w3-container">
+                        <div class="w3-row w3-padding-8">
+                          <div class="w3-half">
+                            <input class="w3-check angs-bg-input" type="checkbox" checked/>
+                            <label class="">พนักงานเป็นผู้ประกันตน</label>
+                          </div>
+                          <div class="w3-half">
+                            <input class="w3-check angs-bg-input" type="checkbox" />
+                            <label class="">พนักงานออกเงินสมทบเอง</label>
+                          </div>
+                        </div>
+                        <div class="w3-row w3-padding-8">
+                          <div class="w3-col w3-padding-4">
+                            สถานพยาบาล
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    บัญชีเงินเดือน
+                    <div class="w3-card-8">
+                      <div class="w3-container">
+                        <div class="w3-row w3-padding-8">
+                          <div class="w3-half">
+                            ธนาคาร
+                            <input class="w3-input w3-border-0 angs-bg-input" style="width:98%;" type="text" />
+                          </div>
+                          <div class="w3-half">
+                            สาขา
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text" />
+                          </div>
+                        </div>
+                        <div class="w3-row w3-padding-12">
+                          <div class="w3-half">
+                            เลขที่บัญชี
+                            <input class="w3-input w3-border-0 angs-bg-input" style="width:98%;" type="text" />
+                          </div>
+                          <div class="w3-half">
+                            ประเภทบัญชี
+                            <select class="w3-select w3-border angs-select angs-bg-input" name="option">
+                              <option value="1" checked>ออมทรัพย์</option>
+                              <option value="2">กระแสรายวัน</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="tab-2" class="w3-container tab-panel" style="display:none">
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      โทรศัพท์
+                      <input class="w3-input w3-border-0 angs-bg-input" style="width:98%" type="text">
+                    </div>
+                    <div class="w3-half">
+                      อีเมล์
+                      <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      ที่อยู่ตามบัตรประชาชน (ไทย)
+                      <div class="w3-card-8" style="width:98%;">
+                        <div class="w3-container">
+                          <div class="w3-row w3-padding-8">
+                            เลขที่/อาคาร/ตรอก/ซอย/ถนน
+                            <textarea class="w3-input w3-border-0 angs-bg-input"></textarea>
+                          </div>
+                          <div class="w3-row w3-padding-8">
+                            <div class="w3-half">
+                              แขวง
+                              <input class="w3-input w3-border-0 angs-bg-input" style="width:95%;" type="text">
+                            </div>
+                            <div class="w3-half">
+                              เขต
+                              <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                            </div>
+                          </div>
+                          <div class="w3-row w3-padding-8">
+                            <div class="w3-half">
+                              จังหวัด
+                              <input class="w3-input w3-border-0 angs-bg-input" style="width:95%;" type="text">
+                            </div>
+                            <div class="w3-half">
+                              รหัสไปรษณีย์
+                              <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                            </div>
+                          </div>
+                          <div class="w3-row w3-padding-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w3-half">
+                      ที่อยู่ตามบัตรประชาชน (อังกฤษ)
+                      <div class="w3-card-8" >
+                        <div class="w3-container">
+                          <div class="w3-row w3-padding-8">
+                            เลขที่/อาคาร/ตรอก/ซอย/ถนน
+                            <textarea class="w3-input w3-border-0 angs-bg-input"></textarea>
+                          </div>
+                          <div class="w3-row w3-padding-8">
+                            <div class="w3-half">
+                              แขวง
+                              <input class="w3-input w3-border-0 angs-bg-input" style="width:95%;" type="text">
+                            </div>
+                            <div class="w3-half">
+                              เขต
+                              <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                            </div>
+                          </div>
+                          <div class="w3-row w3-padding-8">
+                            <div class="w3-half">
+                              จังหวัด
+                              <input class="w3-input w3-border-0 angs-bg-input" style="width:95%;" type="text">
+                            </div>
+                            <div class="w3-half">
+                              รหัสไปรษณีย์
+                              <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                            </div>
+                          </div>
+                          <div class="w3-row w3-padding-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <input class="w3-check angs-bg-input" type="checkbox" checked/>
+                    <label class="">ใช้ที่อยู่ตามบัตรประชาชนสำหรับการติดต่อ</label>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    การติดต่อในกรณีฉุกเฉิน
+                    <div class="w3-card-8" >
+                      <div class="w3-container">
+                        <div class="w3-row w3-padding-8">
+                          <div class="w3-half">
+                            ชื่อ
+                            <input class="w3-input w3-border-0 angs-bg-input" style="width:98%;" type="text"/>
+                          </div>
+                          <div class="w3-half">
+                            ความสัมพันธ์
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text"/>
+                          </div>
+                        </div>
+                        <div class="w3-row w3-padding-8">
+                          <div class="w3-half">
+                            โทรศัพท์
+                            <input class="w3-input w3-border-0 angs-bg-input" style="width:98%;" type="text"/>
+                          </div>
+                          <div class="w3-half">
+                            อีเมล์
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text"/>
+                          </div>
+                        </div>
+                        <div class="w3-row w3-padding-8">
+                          ที่อยู่
+                          <input class="w3-input w3-border-0 angs-bg-input" type="text"/>
+                        </div>
+                        <div class="w3-row w3-padding-4"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div id="tab-3" class="w3-container tab-panel" style="display:none">
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      สถานะพนักงาน
+                      <select class="w3-select w3-border angs-select angs-bg-input" style="width:98%;" name="option">
+                        <option value="1">ทดลองงาน</option>
+                        <option value="2" selected>บรรจุ</option>
+                        <option value="3">ลาออก</option>
+                      </select>
+                    </div>
+                    <div class="w3-half">
+                      ประเภท
+                      <select class="w3-select w3-border angs-select angs-bg-input" name="option">
+                        <option value="1" selected>ประจำ</option>
+                        <option value="2">ชั่วคราว</option>
+                        <option value="3">รายวัน</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    ประวัติการทำงาน
+                    <div class="w3-card-8">
+                      <div class="w3-container">
+                        <div class="w3-row w3-padding-8">
+                          <div class="w3-rest"></div>
+                          <div class="w3-col w3-right w3-padding-8" style="width:6%">
+                            <button id="choose" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect w3-pink" onclick="document.getElementById('employee-modal').style.display='block'">
+                              <i class="material-icons">add</i>
+                            </button>
+                            <div class="mdl-tooltip" data-mdl-for="choose">
+                              เพิ่มรายการประวัติการทำงาน
+                            </div>
+
+                            <div id="employee-modal" class="w3-modal">
+                              <div class="w3-modal-content w3-card-8 angs-bg-input" style="width: 40%;">
+                                <header class="w3-container" style="background: linear-gradient(45deg, #CA90F4, #53AEF9);">
+                                  <h5 class="w3-text-white">ประวัติการทำงาน</h5>
+                                </header>
+                                <div class="w3-container" style="padding-top: 16px;">
+                                  <div class="w3-row w3-padding-16 angs-bg-input">
+                                    <div class="w3-container">
+                                      <div class="w3-row w3-padding-4">
+                                        <input class="w3-input" type="text" required>
+                                        <label class="w3-label w3-text-black w3-validate">ตำแหน่ง</label>
+                                      </div>
+                                      <div class="w3-row w3-padding-4">
+                                        <input class="w3-input" type="text" required>
+                                        <label class="w3-label w3-text-black w3-validate">หน่วยงาน</label>
+                                      </div>
+                                      <div class="w3-row w3-padding-4">
+                                        <input class="w3-input" type="date" required>
+                                        <label class="w3-label w3-text-black w3-validate">วันที่เริ่ม</label>
+                                      </div>
+                                      <div class="w3-row w3-padding-4">
+                                        <input class="w3-input" type="date" required>
+                                        <label class="w3-label w3-text-black w3-validate">วันที่สิ้นสุด</label>
+                                      </div>
+                                      <div class="w3-row w3-padding-4">
+                                        <input class="w3-input" type="number" required>
+                                        <label class="w3-label w3-text-black w3-validate">เงินเดือน</label>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="w3-row w3-right w3-padding-12">
+                                    <button class="w3-btn w3-round w3-red" onclick="document.getElementById('employee-modal').style.display='none'" style="box-shadow: none;">ยกเลิก</button>
+                                    <button class="w3-btn w3-round w3-red" style="box-shadow: none;">ยืนยัน</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                        <div class="w3-row angs-card-scrollable w3-margin-bottom">
+                          <div class="w3-row">
+                            <div class="w3-card w3-border-0 angs-bg-nav w3-margin-right w3-margin-bottom">
+                              <div class="w3-row w3-padding-12" name="work-history-hover">
+                                <a href="#" class="w3-text-black">
+                                  <div class="w3-col w3-container" style="width:44%">
+                                    <div style="font-size: 18px; font-weight: normal;">5 ก.พ. 17 ถึง 11 ก.พ. 17</div>
+                                    <div class="w3-padding-4" style="font-size: 14px; font-weight: initial;">7 วัน</div>
+                                  </div>
+                                  <div class="w3-col w3-container" style="width:44%">
+                                    <div style="font-size: 24px; font-weight: normal;">ผู้พัฒนา</div>
+                                    <div class="w3-padding-8" style="font-size: 18px; font-weight: normal;">A1</div>
+                                    <div class="" style="font-size: 14px; font-weight: initial;">เงินเดือน: 25,000 บาท</div>
+                                  </div>
+                                  <div class="w3-col w3-container" style="width:12%">
+                                    <div class="w3-row w3-right">
+                                      <i class="material-icons w3-text-red angs-icon" id="work-edit-1">edit</i>
+                                      <div class="mdl-tooltip" for="work-edit-1">แก้ไขประวัติการทำงาน</div>
+                                      <i class="material-icons w3-text-red angs-icon" id="work-delete-1">delete</i>
+                                      <div class="mdl-tooltip" for="work-delete-1">ลบประวัติการทำงาน</div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="w3-row">
+                            <div class="w3-card w3-border-0 angs-bg-nav w3-margin-right w3-margin-bottom">
+                              <div class="w3-row w3-padding-12" name="work-history-hover">
+                                <a href="#" class="w3-text-black">
+                                  <div class="w3-col w3-container" style="width:44%">
+                                    <div style="font-size: 18px; font-weight: normal;">5 ก.พ. 17 ถึง 11 ก.พ. 17</div>
+                                    <div class="w3-padding-4" style="font-size: 14px; font-weight: initial;">7 วัน</div>
+                                  </div>
+                                  <div class="w3-col w3-container" style="width:44%">
+                                    <div style="font-size: 24px; font-weight: normal;">ผู้พัฒนา</div>
+                                    <div class="w3-padding-8" style="font-size: 18px; font-weight: normal;">A1</div>
+                                    <div class="" style="font-size: 14px; font-weight: initial;">เงินเดือน: 25,000 บาท</div>
+                                  </div>
+                                  <div class="w3-col w3-container" style="width:12%">
+                                    <div class="w3-row w3-right">
+                                      <i class="material-icons w3-text-red angs-icon" id="work-edit-2">edit</i>
+                                      <div class="mdl-tooltip" for="work-edit-2">แก้ไขประวัติการทำงาน</div>
+                                      <i class="material-icons w3-text-red angs-icon" id="work-delete-2">delete</i>
+                                      <div class="mdl-tooltip" for="work-delete-2">ลบประวัติการทำงาน</div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="w3-row">
+                            <div class="w3-card w3-border-0 angs-bg-nav w3-margin-right w3-margin-bottom">
+                              <div class="w3-row w3-padding-12" name="work-history-hover">
+                                <a href="#" class="w3-text-black">
+                                  <div class="w3-col w3-container" style="width:44%">
+                                    <div style="font-size: 18px; font-weight: normal;">5 ก.พ. 17 ถึง 11 ก.พ. 17</div>
+                                    <div class="w3-padding-4" style="font-size: 14px; font-weight: initial;">7 วัน</div>
+                                  </div>
+                                  <div class="w3-col w3-container" style="width:44%">
+                                    <div style="font-size: 24px; font-weight: normal;">ผู้พัฒนา</div>
+                                    <div class="w3-padding-8" style="font-size: 18px; font-weight: normal;">A1</div>
+                                    <div class="" style="font-size: 14px; font-weight: initial;">เงินเดือน: 25,000 บาท</div>
+                                  </div>
+                                  <div class="w3-col w3-container" style="width:12%">
+                                    <div class="w3-row w3-right">
+                                      <i class="material-icons w3-text-red angs-icon" id="work-edit-3">edit</i>
+                                      <div class="mdl-tooltip" for="work-edit-3">แก้ไขประวัติการทำงาน</div>
+                                      <i class="material-icons w3-text-red angs-icon" id="work-delete-3">delete</i>
+                                      <div class="mdl-tooltip" for="work-delete-3">ลบประวัติการทำงาน</div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div class="w3-row w3-padding-4"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div id="tab-4" class="w3-container tab-panel" style="display:none">
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      วิธีคำนวณภาษีเงินได้
+                      <select class="w3-select w3-border angs-select angs-bg-input" style="width:98%;" name="option">
+                        <option value="1" selected>หัก ณ ที่จ่าย</option>
+                        <option value="2">เหมา</option>
+                        <option value="3">ไม่ต้องคำนวณภาษี</option>
+                      </select>
+                    </div>
+                    <div class="w3-half">
+                      วิธียื่นภาษี
+                      <select class="w3-select w3-border angs-select angs-bg-input" name="option">
+                        <option value="1" >ยื่นด้วยเอกสาร</option>
+                        <option value="2" selected>ยื่นทางอินเตอร์เน็ต</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <div class="w3-half">
+                      สถานภาพการสมรสตาม ภงด. 91
+                      <select class="w3-select w3-border angs-select angs-bg-input" style="width:98%;" name="option">
+                        <option value="1" selected>โสด</option>
+                        <option value="2">สมรสและอยู่ร่วมกันตลอดปีภาษี</option>
+                        <option value="3">สมรสระหว่างปีภาษี</option>
+                        <option value="4">หย่าระหว่างปีภาษี</option>
+                        <option value="5">หม้ายระหว่างปีภาษี</option>
+                      </select>
+                    </div>
+                    <div class="w3-half">
+                      การยื่นภาษีของคู่สมรส
+                      <select class="w3-select w3-border angs-select angs-bg-input" name="option">
+                        <option value="1">มีเงินได้รวมคำนวณภาษี</option>
+                        <option value="2">มีเงินได้แยกยื่นแบบภาษี</option>
+                        <option value="3" selected>ไม่มีเงินได้</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <table class="w3-table w3-border-0">
+                      <thead>
+                        <tr class="w3-text-white" style="background-color: rgba(103, 58, 183, 0.5);">
+                          <th class="" style="width: 70%;">รายการยกเว้นภาษี</th>
+                          <th class="" style="width: 30%;">มูลค่า</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">เงินสะสมกองทุนสำรองเลี้ยงชีพ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">เงินสะสม กบข.</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">เงินสะสมกองทุนสงเคราะห์ครูโรงเรียนเอกชน</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">เงินสะสมกองทุนการออมแห่งชาติ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">คนพิการที่มีอายุไม่เกิน 65 ปีบริบูรณ์</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">คนที่มีอายุตั้งแต่ 65 ปีขึ้นไป</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">เงินค่าชดเชยที่ได้รับตามกฎหมายแรงงาน</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="w3-row w3-padding-8">
+                    <table class="w3-table w3-border-0">
+                      <thead>
+                        <tr class="w3-text-white" style="background-color: rgba(103, 58, 183, 0.5);">
+                          <th class="" style="width: 70%;">รายการลดหย่อนภาษี</th>
+                          <th class="" style="width: 30%;">มูลค่า</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">ผู้มีเงินได้</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">คู่สมรส</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">จำนวนบุตรที่ยังไม่ได้เข้าเรียน</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">จำนวนบุตรที่อยู่ระหว่างการศึกษา</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">บิดามารดาที่อยู่ในอุปการะ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">เบี้ยประกันสุขภาพของบิดามารดา</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">คนพิการที่อยู่ในอุปการะ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">เบี้ยประกันชีวิต</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">เบี้ยประกันชีวิตแบบบำนาญ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">เงินสะสมกองทุนสำรองเลี้ยงชีพ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">ค่าซื้อหน่วยลงทุนในกองทุนรวมเพื่อการเลี้ยงชีพ (RMF)</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">ค่าซื้อหน่วยลงทุนในกองทุนรวมหุ้นระยะยาว (LTF)</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">ดอกเบี้ยเงินกู้ยืม เพื่อซื้อ เช่าซื้อ หรือสร้างอาคารอยู่อาศัย</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">เงินได้ที่จ่ายเพื่อซื้ออสังหาริมทรัพย์</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">มูลค่าอสังหาริมทรัพย์</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">เงินสมทบกองทุนประกันสังคม</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                        <tr class="ang-table-tr-even">
+                          <td class="" style="width: 70%;">ค่าการเดินทางท่องเที่ยวในประเทศ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+                        <tr class="ang-table-tr-odd">
+                          <td class="" style="width: 70%;">ค่าซื้อสินค้าหรือบริการในประเทศ</td>
+                          <td class="w3-padding-0" style="width: 30%;">
+                            <input class="w3-input w3-border-0 angs-bg-input" type="text">
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+
+
+                <script>
+                  function openTab(evt, tabName) {
+                    var i, x, tablinks;
+                    x = document.getElementsByClassName("tab-panel");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablink");
+                    for (i = 0; i < x.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" w3-khaki", " angs-bg-input");
+                    }
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " w3-khaki";
+                  }
+                </script>
+              </div>
+
+
+              <div class="w3-row w3-padding-8"></div>
+
+
+
+            </div>
+        </div>
+      </main>
+
+
+  </body>
+</html>
